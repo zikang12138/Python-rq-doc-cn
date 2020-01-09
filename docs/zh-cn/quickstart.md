@@ -63,5 +63,5 @@ Job result = 818
 
 > 可以明显看到已经访问了 www.baidu.com 这个网址, 说明 count_words_at_url 函数已经被执行了
 
-测试代码见: https://github.com/wgPython/Python-rq-doc-cn/quickstart_main.py
+测试代码见: https://github.com/wgPython/Python-rq-doc-cn/blob/master/quickstart_main.py
 

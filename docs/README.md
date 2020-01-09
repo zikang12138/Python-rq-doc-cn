@@ -14,6 +14,8 @@
 
 ## [快速开始](zh-cn/quickstart.md)
 
+- [翻译文档仓库地址](https://github.com/wgPython/Python-rq-doc-cn): https://github.com/wgPython/Python-rq-doc-cn
+
 ## 参考
 
 - https://stackoverflow.com/questions/13440875/pros-and-cons-to-use-celery-vs-rq
