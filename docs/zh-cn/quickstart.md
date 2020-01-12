@@ -47,9 +47,8 @@ result = q.enqueue(
 
 
 ## The Worker
-后面我会翻译成rq 服务,不确定是否准确, 我也查阅过部分资料 
-- https://bbs.csdn.net/topics/392084222
-- [软件工程中英对照术语](https://people.ubuntu.com/~happyaron/l10n/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%AD%E8%8B%B1%E5%AF%B9%E7%85%A7%E6%9C%AF%E8%AF%AD%E8%A1%A8-old.html)
+后面我会翻译成rq 队列服务,不确定是否准确, 我也查阅过部分资料 https://bbs.csdn.net/topics/392084222
+ 
 > 在`项目目录中`启动 Worker，开始在后台执行 enqueued 中的函数
 
 ```
