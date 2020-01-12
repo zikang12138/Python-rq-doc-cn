@@ -1,9 +1,9 @@
-* [Home/快速开始](zh-cn/quickstart.md)
+* [Home](zh-cn/quickstart.md)
 
-* 文档详情
+* Doc/文档详情
 
   * [Queues/队列](zh-cn/queues.md)
-  * [Worker/服务](zh-cn/workes.md)
+  * [Worker/服务](zh-cn/worker.md)
   * [Result/结果](zh-cn/result.md)
   * [Jobs/任务](zh-cn/jobs.md)
   * [Monitoring/监控](zh-cn/monitoring.md)
