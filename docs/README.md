@@ -1,5 +1,5 @@
 
-## rq
+## rq 中文文档个人翻译(非官方)
 
 > RQ(Redis Queue) 是一个非常简洁,轻量级,用于处理后台任务队列的Python库。
 
@@ -11,7 +11,7 @@
 - 方便集成到web应用当中,对新手友好。
 
 
-## FQA
+## FAQ
 - `broker 仅支持redis`
 - 不支持windows， 由于RQ worker只实现了`fork()`。
 
