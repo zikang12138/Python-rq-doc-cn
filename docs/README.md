@@ -12,7 +12,7 @@
 
 
 ## FAQ
-- `broker 仅支持redis`
+- `broker` 仅支持redis
 - 不支持windows， 由于RQ worker只实现了`fork()`。
 
 ## 解释
