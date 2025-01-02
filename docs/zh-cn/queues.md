@@ -147,9 +147,32 @@ q.enqueue(send_report, depends_on=report_job)
 ```
 处理任务依赖性的能力可以将一个复杂的任务拆分为几个较小的任务。依赖于另一个任务的任务仅在其依赖关系成功完成时才入队列。
 
+## Job Callbacks
+New in version 1.9.0.
+如果你需要在任务完成、失败或者停止时执行某个函数，RQ提供了`on_success`、`on_failure`和`on_stopped`回调。
+### Callback Class and Callback Timeouts 
+
+
 ## The worker (rq队列服务)
 想了解更多`worker`，可以参阅[Worker](zh-cn/worker.md)
+RQ 允许您配置每个回调的方法和超时 - 成功、失败和停止。
+要配置回调超时，请使用 接受和参数的RQ`Callback`对象。例如：`func` `timeout`
+```python
+from rq import Callback
+queue.enqueue(say_hello, 
+              on_success=Callback(report_success),  # default callback timeout (60 seconds) 
+              on_failure=Callback(report_failure, timeout=10), # 10 seconds timeout
+              on_stopped=Callback(report_stopped, timeout="2m")) # 2 minute timeout
+```
+### Success Callback
+成功的回调必须时一个接受`job`, `connection` 和 `result`这三个参数的一个函数。你的函数应该接受`*args`和`**kwargs`以确保你的应用不会因为函数被添加额外的参数而中断。
+```python
+def report_success(job, connection, result, *args, **kwargs):
+    pass
+```
+成功回调在作业执行完成后、依赖项入队之前执行。如果在执行回调时发生异常，作业状态将设置为`FAILED`，依赖性项不会入队。
 
+回调的执行时间限制为 60 秒。如果要执行长时间运行的作业，请考虑使用 RQ 的作业依赖性功能。
 
 ## Considerations for jobs(任务注意事项)
 从技术上讲，您可以将任何Python函数放在队列中调用，但这并不意味着这样做总是明智的。将任务放入队列之前要考虑的一些事项：
